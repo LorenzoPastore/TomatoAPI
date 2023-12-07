@@ -29,7 +29,7 @@ TomatoAPI consente di richiedere diverse tipologie di listing grazie alle relazi
   - solo quelli utilizzati da un ristorante specificato
  
 <h3>Come utilizzo TomatoAPI?</h3>
-Ti è sufficiente scaricare il codice ed utilizzare la DockerImage disponibile al suo interno!
+È sufficiente scaricare il codice ed utilizzare la DockerImage disponibile al suo interno!
 
 <h3>Dove trovo la documentazione?</h3 >
 Puoi trovare la documentazione completa su <a href="https://documenter.getpostman.com/view/31619142/2s9YeN2UPM" target="_blank">Postman</a> 
