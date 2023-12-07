@@ -6,15 +6,15 @@ urlpatterns = [
          IngredienteCreateAPIView.as_view(),
          name="ingredienti-list"),
 
-    path("ingredienti//<int:pk>/",
+    path("ingredienti/<int:pk>/",
          IngredienteDetailAPIView.as_view(),
          name="ingredienti-detail"),
 
-    path("ingredienti/ricetta//<int:ricetta_id>/",
+    path("ingredienti_by_ricetta/<int:ricetta_id>/",
          IngredienteByRicettaAPIView.as_view(),
          name="ricette-byricetta"),
 
-    path("ingredienti/ristorante//<int:ristorante_id>/",
+    path("ingredienti_by_ristorante/<int:ristorante_id>/",
          IngredienteByRistoranteAPIView.as_view(),
          name="ingredienti-byristorante")
 ]

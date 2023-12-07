@@ -6,11 +6,11 @@ urlpatterns = [
          RistoranteCreateAPIView.as_view(),
          name="ristorante-list"),
 
-    path("ristoranti//<int:pk>/",
+    path("ristoranti/<int:pk>/",
          RistoranteDetailAPIView.as_view(),
          name="ristorante-detail"),
 
-    path("ristoranti/ricetta//<int:ricetta_id>/",
+    path("ristoranti_by_ricetta/<int:ricetta_id>/",
          RistoranteByRicettaAPIView.as_view(),
          name="ristorante-byricetta")
 

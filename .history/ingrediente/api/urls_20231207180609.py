@@ -14,7 +14,7 @@ urlpatterns = [
          IngredienteByRicettaAPIView.as_view(),
          name="ricette-byricetta"),
 
-    path("ingredienti/ristorante//<int:ristorante_id>/",
+    path("ingredienti/ristorante/<int:ristorante_id>/",
          IngredienteByRistoranteAPIView.as_view(),
          name="ingredienti-byristorante")
 ]
