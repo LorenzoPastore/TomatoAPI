@@ -6,8 +6,7 @@ TomatoAPI è un servizio creato in Django per la gestione di tre entità e delle
 - Ristoranti
 - Ricette
 - Ingredienti
-
-<h3>Cosa posso fare con TomatoAPI?</h3>
+  
 Per ciascuna entità è possibile effettuare le seguenti operazioni:
 
 * Creare
