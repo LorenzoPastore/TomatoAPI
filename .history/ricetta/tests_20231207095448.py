@@ -38,6 +38,7 @@ class RicettaAPITestCase(TestCase):
         }
         response = self.client.post(reverse('ricette-list'), data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Ricetta.objects.count(), 2)
 
     def test_ricetta_detail_api(self):
         response = self.client.get(reverse('ricette-detail', args=[self.ricetta.id]))
@@ -53,11 +54,14 @@ class RicettaAPITestCase(TestCase):
     def test_ricetta_delete_api(self):
         response = self.client.delete(reverse('ricette-detail', args=[self.ricetta.id]))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Ricetta.objects.count(), 0)
 
     def test_ricetta_by_ristorante_api(self):
         response = self.client.get(reverse('ricette-byristorante', args=[1]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
 
     def test_ricetta_by_ingrediente_api(self):
         response = self.client.get(reverse('ricette-byingrediente', args=[self.ingrediente.id]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)

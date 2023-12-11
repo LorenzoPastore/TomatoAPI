@@ -52,7 +52,8 @@ class IngredienteAPITestCase(TestCase):
     def test_ingrediente_by_ricetta_api(self):
         response = self.client.get(reverse('ricette-byricetta', args=[self.ricetta.id]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        
+        self.assertEqual(len(response.data), 1)
+
     def test_ingrediente_by_ristorante_api(self):
         response = self.client.get(reverse('ingredienti-byristorante', args=[self.ristorante.id]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)

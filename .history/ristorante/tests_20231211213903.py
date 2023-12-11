@@ -53,7 +53,9 @@ class RistoranteAPITestCase(TestCase):
     def test_ristorante_delete_api(self):
         response = self.client.delete(reverse('ristorante-detail', args=[self.ristorante.id]))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Ristorante.objects.count(), 0)
 
     def test_ristorante_by_ricetta_api(self):
         response = self.client.get(reverse('ristorante-byricetta', args=[self.ricetta.id]))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
